@@ -1,4 +1,5 @@
 //Arithmatic operators are used to do basic math.
+
 void main() {
   int a = 10;
   int b = 5;
@@ -89,6 +90,4 @@ void main() {
   int number_4 = 4;
   number_4 |= 2;
   print(number_4);
-
-  //
 }
