@@ -5,7 +5,15 @@ class Robots {
   var type;
   var motor_count;
 
-  //A class can also have a constructor
+  //There is a shorthand way to create a class constructor
+  Robots(this.name, this.motor_count, [this.type = 'Unspecified']);
+
+  //named constructors
+  Robots.technician() {
+    name = 'technician';
+    type = 'Human that the robots percieve as a robot.';
+    motor_count = 'None - See Operator Handbook Ch. 6 Section 4!';
+  }
 
   //add class methods as well
   void describe_robot() {
@@ -20,9 +28,12 @@ NUMBER OF MOTORS: $motor_count
 }
 
 void main() {
-  Robots drone_0 = Robots();
-  drone_0.name = 'FRR-001';
-  drone_0.type = 'Quad Copter';
-  drone_0.motor_count = '6';
+  Robots drone_0 = Robots('FRR_100', '6');
   drone_0.describe_robot();
+
+  Robots drone_1 = Robots('BPW_001', '45', 'Bi Pedal Walker');
+  drone_1.describe_robot();
+
+  var drone_2 = Robots.technician();
+  drone_2.describe_robot();
 }
