@@ -34,9 +34,26 @@ Map<String, int> map_2 = {'num_1': 4, 'num_2': 5};
 
 List<dynamic> listMapValues = [...numbers_4, ...map_2.values];
 
+//Another aspect of the spread operator is passing a variable amount of arguments to a function.
+void pArgs(List<int> args) {
+  for (var arg in args) {
+    print(arg);
+  }
+}
+
+void addTwo(List<int> args) {
+  for (var arg in args) {
+    print(arg + 2);
+  }
+}
+
 void main() {
   print(combine_L01);
   print(mapMerge);
   print(numbers_3);
   print(listMapValues);
+  //This function can accept a variable amount of arguments!
+  pArgs([...numbers_0, ...numbers_1]);
+  pArgs([...numbers_0, ...numbers_1, ...numbers_2, ...numbers_3, ...numbers_4]);
+  addTwo([...numbers_0]);
 }
