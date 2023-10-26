@@ -21,6 +21,16 @@ class Grades {
 //The named constructor can now be used
 var student_1 = Grades.namedConstructor(95, "samuel");
 
+//Paramterized Constructors initialize the objects instance variables
+class paramsClass {
+  int number = 1;
+
+  //Parameterized constructor
+  paramsClass(int start) {
+    number = start;
+  }
+}
+
 void main() {
   print(student_1);
 }
