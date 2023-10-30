@@ -23,3 +23,9 @@ class Species extends Egg {
 
 var species_00 = Species('white', 5.01, 'chicken');
 var species_01 = Species('White', 2.5, 'king cobra');
+
+//This code tells the dart compiler that the species name will be initialized later.
+
+void main() {
+  Species('brown', 2.6, 'unknown');
+}
