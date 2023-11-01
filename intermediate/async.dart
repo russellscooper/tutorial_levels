@@ -6,16 +6,12 @@ import 'dart:async';
 import 'dart:math';
 
 Future<int> primeGen() async {
-  // Generating primes is an artificially intensive task.
-  int random = Random()
-      .nextInt(1000000); // Set a finite upper bound for testing purposes.
+  int random = Random().nextInt(1000000);
 
-  // Check if the number is prime.
   while (!isPrime(random)) {
     random++;
   }
 
-  // If it is prime, return it.
   print('Prime Done');
   return random;
 }
@@ -33,10 +29,10 @@ bool isPrime(int n) {
   return true;
 }
 
-void main() async {
-  final prime_0 = await primeGen();
-  final prime_1 = await primeGen();
-  final solution = prime_0 + prime_1;
+Future<void> main() async {
+  final futures = <Future<int>>[primeGen(), primeGen()];
+
+  final results = await Future.wait(futures);
+  final solution = results[0] + results[1];
   print('Sum of two primes: $solution');
-  //Get some user input while the above calculation runs.
 }
