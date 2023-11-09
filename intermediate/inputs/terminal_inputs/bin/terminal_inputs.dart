@@ -1,5 +1,17 @@
-import 'package:terminal_inputs/terminal_inputs.dart' as terminal_inputs;
+import 'package:dart_console/dart_console.dart';
 
-void main(List<String> arguments) {
-  print('Hello world: ${terminal_inputs.calculate()}!');
+int main() {
+  final console = Console();
+
+  console.clearScreen();
+  console.resetCursorPosition();
+
+  console.writeLine(
+    'Console size is ${console.windowWidth} cols and ${console.windowHeight} rows.',
+    TextAlignment.center,
+  );
+
+  console.writeLine();
+
+  return 0;
 }
