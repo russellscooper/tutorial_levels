@@ -1,4 +1,4 @@
-import 'package:inputs/inputs.dart';
+import 'package:terminal_inputs/terminal_inputs.dart';
 import 'package:test/test.dart';
 
 void main() {
